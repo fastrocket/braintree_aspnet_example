@@ -1,23 +1,23 @@
 ﻿using Braintree;
 using BraintreeASPExample;
 using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace BraintreeASPExampleTests
 {
-    [TestClass]
+    [TestFixture]
     public class BraintreeConfigurationTest
     {
         private TestHelper testHelper;
 
-        [TestInitialize]
+        [SetUp]
         public void CaptureEnvironmentVariables()
         {
             testHelper = new TestHelper();
             testHelper.StoreEnvironmentVariables();
         }
 
-        [TestMethod]
+        [Test]
         public void TestConfiguringGateway()
         {
             testHelper.RemoveEnvironmentVariables();
@@ -31,7 +31,7 @@ namespace BraintreeASPExampleTests
             Assert.AreEqual(gateway.PrivateKey, "PrivateKey");
         }
 
-        [TestMethod]
+        [Test]
         public void TestEnvironmentVariableGateway()
         {
             IBraintreeConfiguration config = new BraintreeConfiguration();
@@ -49,7 +49,7 @@ namespace BraintreeASPExampleTests
             Assert.AreEqual(gateway.PrivateKey, "TestEnvPrivateKey");
         }
 
-        [TestCleanup]
+        [TearDown]
         public void CleanUpEnvironmentVariables()
         {
             testHelper.RestoreEnvironmentVariables();

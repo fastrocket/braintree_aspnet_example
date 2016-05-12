@@ -1,0 +1,5 @@
+language: csharp
+solution: braintree_aspnet_example.sln
+notifications:
+  email:
+    - "external-ci-notifications+braintree_aspnet_example@getbraintree.com"

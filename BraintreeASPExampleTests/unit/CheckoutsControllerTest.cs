@@ -6,14 +6,14 @@ using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace BraintreeASPExampleTests
 {
-    [TestClass]
+    [TestFixture]
     public class CheckoutsControllerTest
     {
-        [TestMethod]
+        [Test]
         public void TestForClientToken()
         {
             var clientTokenMock = new Mock<IClientTokenGateway>();
