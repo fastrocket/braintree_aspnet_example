@@ -98,7 +98,7 @@
         </section>
 
         @{
-            if (@ViewBag.Transaction.CustomerDetails?.Id != null) 
+            if (@ViewBag.Transaction.CustomerDetails != null && @ViewBag.Transaction.CustomerDetails.Id != null) 
             {
                 <section>
                     <h5>Customer Details</h5>
